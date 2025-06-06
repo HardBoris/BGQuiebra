@@ -20,11 +20,4 @@
     <string name="hint_014">Copiar</string>
     <string name="hint_015">N/A</string>
 
-    <string-array name="codigos_spinner">
-        <item>100</item>
-        <item>150</item>
-        <item>200</item>
-        <item>250</item>
-        <item>300</item>
-    </string-array>
 </resources>
