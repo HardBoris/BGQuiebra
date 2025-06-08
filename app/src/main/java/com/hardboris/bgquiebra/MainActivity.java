@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,10 +18,11 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     EditText contrato, codigo, motivo, janela, parceira, servicio, portero, observaciones, tecnico;
-    Button copiar;
+    Button copiar, copiarObservaciones;
     TextView mostraData;
     RadioButton apartamento, casa, comercio;
     String isCasa, isComercio, isApartamento, isPortero, otro;
+    CharSequence luna;
     CheckBox temPortero;
     //Bundle recibeDatos = getIntent().getExtras();
 
@@ -48,9 +48,7 @@ public class MainActivity extends AppCompatActivity {
         codigos.setAdapter(adapter);*/
 
         copiar = findViewById(R.id.btnCopiar);
-
-        //tecnico = recibeDatos.getString("d1");
-        //parcera = recibeDatos.getString("d2");
+        copiarObservaciones = findViewById(R.id.btnCopiarObservaciones);
         contrato = findViewById(R.id.txtContrato);
         codigo = findViewById(R.id.txtCodigo);
         motivo = findViewById(R.id.txtMotivo);
@@ -64,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
         temPortero = findViewById(R.id.chbPortero);
         portero = findViewById(R.id.txtPortero);
         observaciones = findViewById(R.id.txtObservaciones);
+        luna = observaciones.getText().toString();
 
+        copiarObservaciones.setOnClickListener(v -> Observator());
         copiar.setOnClickListener(v -> Validator());
 
         temPortero.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -93,6 +93,17 @@ public class MainActivity extends AppCompatActivity {
         temPortero.setChecked(false);
         portero.setText("");
         observaciones.setText("");
+    }
+
+    private void Observator(){
+        if (observaciones.getText().toString().isEmpty()){
+            Toast.makeText(MainActivity.this, "O campo das Observações está vazio!", Toast.LENGTH_SHORT).show();
+        } else {
+            ClipboardManager clipboardObservaciones = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+            ClipData clipObservaciones = ClipData.newPlainText("obs",  "'" + observaciones.getText().toString() + "'" );
+            clipboardObservaciones.setPrimaryClip(clipObservaciones);
+            Toast.makeText(MainActivity.this, "Texto copiado!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void Validator(){

@@ -239,6 +239,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/btnCopiarObservaciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_016"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/gray"
+        android:padding="15dp"
+        />
+
+    <Button
         android:id="@+id/btnCopiar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
