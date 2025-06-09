@@ -18,7 +18,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     EditText contrato, codigo, motivo, janela, parceira, servicio, portero, observaciones, tecnico;
-    Button copiar, copiarObservaciones;
+    Button copiar, copiarObservaciones, nuevo;
     TextView mostraData;
     RadioButton apartamento, casa, comercio;
     String isCasa, isComercio, isApartamento, isPortero, otro;
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         copiar = findViewById(R.id.btnCopiar);
         copiarObservaciones = findViewById(R.id.btnCopiarObservaciones);
+        nuevo = findViewById(R.id.btnNovo);
         contrato = findViewById(R.id.txtContrato);
         codigo = findViewById(R.id.txtCodigo);
         motivo = findViewById(R.id.txtMotivo);
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
         copiarObservaciones.setOnClickListener(v -> Observator());
         copiar.setOnClickListener(v -> Validator());
+        nuevo.setOnClickListener(v -> Cleaner());
 
         temPortero.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (temPortero.isChecked()){
@@ -165,6 +167,5 @@ public class MainActivity extends AppCompatActivity {
                 "\nObservações: *" + observaciones.getText().toString()+ "*");
         clipboardManager.setPrimaryClip(clipData);
         Toast.makeText(MainActivity.this, "copiado...", Toast.LENGTH_SHORT).show();
-        Cleaner();
     }
 }
