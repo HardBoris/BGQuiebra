@@ -1,10 +1,10 @@
 package com.hardboris.bgquiebra.model;
 
-public class Baixas {
+public class Baixa {
     private String codigo;
     private String baixa;
 
-    public Baixas(String codigo, String baixa) {
+    public Baixa(String codigo, String baixa) {
         this.codigo = codigo;
         this.baixa = baixa;
     }
