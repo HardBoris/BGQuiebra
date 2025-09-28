@@ -183,24 +183,111 @@ public class MainActivity extends AppCompatActivity{
         baixas.add(new Baixa("", "--Selecione o motivo da baixa--", ""));
         baixas.add(new Baixa("100", "Agendamento Não Cumprido", "Quando o técnico não consegue cumprir o período agendado com o cliente"));
         baixas.add(new Baixa("101", "Endereço Não Localizado", "Quando o técnico não localiza o endereço para executar o serviço"));
-        baixas.add(new Baixa("102", "Área / Situação de Risco", "Quando o técnico vai até a residência do cliente e identifica que o serviço não podera ser realizado devido à chuva."));
+        baixas.add(new Baixa("102", "Área / Situação de Risco", "Quando o técnico vai até a residência do cliente e identifica situação de risco permanente ou momentâneo à sua integridade física."));
         baixas.add(new Baixa("103", "Chuva", "Quando o técnico vai até a residência do cliente e identifica que o serviço não podera ser realizado devido à chuva."));
-        /*baixas.add(new Baixa(104, "Falta de Material", "Quando o técnico vai até a residência do cliente e não consegue executar o serviço, devido à falta de material ou equipamento."));
-        baixas.add(new Baixa(105, "Sem Energia Elétrica Na Região / Prédio / Residência"));
-        baixas.add(new Baixa(106, "Cliente Ausente"));
-        baixas.add(new Baixa(107, "Entrada Não Autorizada"));
-        baixas.add(new Baixa(108, "Tubulação Obstruída Sem Solução"));
-        baixas.add(new Baixa(110, "Problema Na Tubulação"));
-        baixas.add(new Baixa(112, "Sem Acesso ao DG / Sotão"));
-        baixas.add(new Baixa(113, "Sem TV / Computador na Residência / Celular"));
-        baixas.add(new Baixa(120, "Impossibilidade ao Atendimento"));
-        baixas.add(new Baixa(125, "Cliente Desiste da Agenda"));
-        baixas.add(new Baixa(202, "Node em Outage"));
-        baixas.add(new Baixa(203, "Rede Externa Com Problema"));
-        baixas.add(new Baixa(204, "Backbone Com Problema"));
-        baixas.add(new Baixa(205, "Falta Tap Ou Passivos / Tap Ou Passivo Lotado"));
-        baixas.add(new Baixa(206, "Prédio Sem Backbone"));
-        baixas.add(new Baixa(207, "Prédio Sem Retorno Ativado"));*/
+        baixas.add(new Baixa("104",
+                "Falta de Material",
+                "Quando o técnico vai até a residência do cliente e não consegue executar o serviço, devido à falta de material ou equipamento."));
+        baixas.add(new Baixa("105",
+                "Sem Energia Elétrica Na Região / Prédio / Residência",
+                "Quando o técnico vai até a residência do cliente e não consegue executar o serviço devido à falta de energia elétrica."));
+        baixas.add(new Baixa("106",
+                "Cliente Ausente",
+                "Quando o técnico vai até a residência do cliente e o mesmo ou os responsáveis estão ausentes"));
+        baixas.add(new Baixa("107",
+                "Entrada Não Autorizada",
+                "Quando o técnico vai até a residência e não obtém autorização do responsável para sua entrada."));
+        baixas.add(new Baixa("108",
+                "Tubulação Obstruída sem solução",
+                "Quando o técnico vai até a residência do cliente e detecta que o mesmo tem de fazer algum tipo de obra civil ou alteração na rede elétrica em sua residência para viabilizar a execução do serviço."));
+        baixas.add(new Baixa("110",
+                "Problema Na Tubulação",
+                "Quando o técnico vai até a residência do cliente e detecta algum problema na tubulação e o cliente resolverá o problema para viabilizar a execução do serviço."));
+        baixas.add(new Baixa("112",
+                "Sem Acesso Ao DG / Sótão",
+                "Quando o técnico vai até a residência do cliente e não consegue acesso ao DG ou Sótão para executar o serviço"));
+        baixas.add(new Baixa("113",
+                "Sem TV / Computador na Residencia / Celular",
+                "Quando o técnico vai até a residência do cliente e constata que o mesmo não possui os equipamentos, necessários para que se conclua o serviço."));
+        baixas.add(new Baixa("120",
+                "Impossibilidade ao Atendimento",
+                "Quando o técnico fica impedido de realizar a visita"));
+        baixas.add(new Baixa("125",
+                "Cliente desiste da Agenda",
+                "Quando o técnico vai até a residência do cliente e o mesmo ou o responsável solicita novo agendamento"));
+        baixas.add(new Baixa("202",
+                "Node em Outage",
+                "Quando o Outage impede a execução dos serviços em campo ou são geradas visitas indevidas relacionadas a este problema"));
+        baixas.add(new Baixa("203",
+                "Rede Externa Com Problema",
+                "Quando o técnico vai até a residência do cliente e detecta que só conseguirá executar o serviço após uma intervenção na Rede Externa"));
+        baixas.add(new Baixa("204",
+                "Backbone Com Problema",
+                "Quando o técnico vai até a residência do cliente e detecta que só conseguirá executar o serviço após uma intervenção no Backbone"));
+        baixas.add(new Baixa("205",
+                "Falta Tap Ou Passivo / Tap Ou Passivo Lotado",
+                "Quando o técnico vai até a residência do cliente e detecta que o Tap ou Passivo que deveria estar disponível para o HP não existe ou está lotado, impedindo a execução do serviço."));
+        baixas.add(new Baixa("206",
+                "Prédio Sem Backbone",
+                "Quando o técnico vai até a residência do cliente e detecta que o MDU no qual o mesmo reside não possui Backbone, impedindo a execução do serviço."));
+        baixas.add(new Baixa("207",
+                "Prédio Sem Retorno Ativado",
+                "Quando o técnico vai até a residência do cliente e detecta que o Backbone não possui retorno ativado, impedindo a execução do serviço."));
+        baixas.add(new Baixa("208",
+                "Problemas no NOW",
+                "Quando técnico vai a residência do cliente e identifica problema do NOW e necessita de intervenção do NOC"));
+        baixas.add(new Baixa("209",
+                "Prédio sem NAP GPON",
+                "Quando o prédio não contempla de estrutura interna para instalação GPON"));
+        baixas.add(new Baixa("211",
+                "Falta NAP/NAP Lotada",
+                "Quando o técnico vai até a residência do cliente e detecta que a NAP que deveria estar disponível para o HP não existe ou está lotado, impedindo a execução do serviço."));
+        baixas.add(new Baixa("217",
+                "Backbone GPON com problema",
+                "Quando o técnico vai até a residência do cliente e detecta que só conseguirá executar o serviço após uma intervenção no Backbone GPON"));
+        baixas.add(new Baixa("301",
+                "Tipo de OS Incorreta",
+                "Quando o técnico constata que o operador utilizou o tipo de OS incorreta ao do serviço solicitado"));
+        baixas.add(new Baixa("302",
+                "Desistência da Assinatura / Serviço",
+                "Quando o cliente desiste do pedido da assinatura ou serviço. Este código também deve ser utilizado para baixa do backlog para instalação, seviços e manutenção."));
+        baixas.add(new Baixa("303",
+                "Forma de Instalação Não Aceita Pelo Cliente",
+                "Quando o técnico vai até a residência do cliente e o mesmo não aceita a forma de instalação possível."));
+        baixas.add(new Baixa("304",
+                "Node Nao Liberado (Para Virtua e/ou Net Fone)",
+                "Quando o técnico vai até a residência do cliente e detecta a impossibilidade de executar o serviço, pois o Node onde está localizado o seu HP não está liberado para o Vírtua e/ou Net Fone"));
+        baixas.add(new Baixa("305",
+                "Rua não cabeada",
+                "Para clientes que solicitaram produtos compatíveis com a rede HFC, e você identificar que não existe a nossa rede HFC no local"));
+        baixas.add(new Baixa("306",
+                "Não Reside No Endereço",
+                "Quando o técnico vai até a residência do cliente e detecta a impossibilidade de executar o serviço, pois o mesmo não reside naquele endereço."));
+        baixas.add(new Baixa("307",
+                "Residência Em Construção /Reforma",
+                "Quando o técnico vai até a residência do cliente e detecta a impossibilidade de executar o serviço, pois a mesmaestá em construção ou reforma."));
+        baixas.add(new Baixa("308",
+                "Instalação Não Contemplara Padrão",
+                "Quando o técnico vai até a residência do cliente e detecta a impossibilidade de executar o serviço, pois irá ferir os padrões técnicos determinados pela Claro."));
+        baixas.add(new Baixa("309",
+                "Computador não possui configuração Minima",
+                "Quando o técnico vai até a residênciado cliente e detecta a impossibilidadede executar o serviço, pois seu computador não atende aos pré-requisitos técnicos necessários."));
+        baixas.add(new Baixa("312",
+                "Cliente não solicitou serviço",
+                "Quando o técnico vai até a residência do cliente e o mesmo afirma não ter solicitado qualquer tipo de serviço."));
+        baixas.add(new Baixa("316",
+                "Rua não cabeada GPON.",
+                "Para clientes que solicitaram produtos compatíveis com a rede GPON, e você identificar que não existe a nossa rede GPON no local."));
+        baixas.add(new Baixa("400",
+                "Correção de Cadastro",
+                "Quando o COP necessita corrigir um contrato através da execução de uma OS com ou sem o técnico ir a campo."));
+        baixas.add(new Baixa("402",
+                "Divergência de Dados Cadastrais",
+                "Quando algum dado cadastral do cliente precisa ser atualizado"));
+        baixas.add(new Baixa("408",
+                "Equipamento do Cliente com Defeito",
+                "Quando o técnico vai até a residência do cliente e detecta que o problema está no equipamento ou na rede de dados instalada pelo cliente."));
+
     }
 
     private void Transferir(){
