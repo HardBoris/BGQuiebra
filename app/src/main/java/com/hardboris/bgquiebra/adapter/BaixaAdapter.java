@@ -24,6 +24,9 @@ public class BaixaAdapter extends ArrayAdapter<Baixa> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){
+        if (position == 0){
+            return viewInicial(position,convertView,parent);
+        }
         return view(position, convertView, parent);
     }
 
@@ -32,16 +35,16 @@ public class BaixaAdapter extends ArrayAdapter<Baixa> {
         if (position == 0){
             return viewInicial(position,convertView,parent);
         }
-        return view(position,convertView,parent);
+        return view(position, convertView, parent);
     }
 
-    private View view(int position, View convertView, ViewGroup parent){
+    private View view(int position, @Nullable View convertView, @NonNull ViewGroup parent){
         convertView = LayoutInflater.from(getContext()).inflate(
-                R.layout.spinner_item, parent, false
+                R.layout.item_baixa, parent, false
         );
 
-        TextView txtCodigo = convertView.findViewById(R.id.txtCodigo);
-        TextView txtBaixa = convertView.findViewById(R.id.txtMotivo);
+        TextView txtCodigo = convertView.findViewById(R.id.txtCod);
+        TextView txtBaixa = convertView.findViewById(R.id.txtDescripcion);
         Baixa baixa = getItem(position);
         txtCodigo.setText(baixa.getCodigo());
         txtBaixa.setText(baixa.getBaixa());
@@ -51,13 +54,11 @@ public class BaixaAdapter extends ArrayAdapter<Baixa> {
 
     private View viewInicial(int position, View convertView, ViewGroup parent){
         convertView = LayoutInflater.from(getContext()).inflate(
-                R.layout.spinner_item, parent, false
+                R.layout.item_inicial, parent, false
         );
 
-        TextView txtCodigo = convertView.findViewById(R.id.txtCodigo);
-        TextView txtBaixa = convertView.findViewById(R.id.txtMotivo);
+        TextView txtBaixa = convertView.findViewById(R.id.txtDescripcion);
         Baixa baixa = getItem(position);
-        txtCodigo.setText(baixa.getCodigo());
         txtBaixa.setText(baixa.getBaixa());
 
         return convertView;

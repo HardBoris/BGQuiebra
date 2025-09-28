@@ -55,50 +55,31 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Spinner
+        android:id="@+id/baixaSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/spinner_style"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="20dp"
-        tools:listitem="@layout/spinner_item"/>
+        android:paddingVertical="5dp"
+        tools:listitem="@layout/item_baixa"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:hint="@string/hint_002"
-        app:hintTextColor="@color/teal_200"
-        app:boxStrokeColor="@color/red"
-        app:errorEnabled="true"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        >
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtCodigo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:digits="0123456789"
-            />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:hint="@string/hint_003"
-        app:hintTextColor="@color/teal_200"
-        app:boxStrokeColor="@color/red"
-        app:errorEnabled="true"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        >
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtMotivo"
+        <TextView
+            android:id="@+id/txtDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
+            android:visibility="gone"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="18sp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:gravity="left"
+            android:background="@drawable/item_style"
             />
-    </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
