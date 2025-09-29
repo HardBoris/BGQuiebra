@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity{
             Toast.makeText(MainActivity.this, "O campo das Observações está vazio!", Toast.LENGTH_SHORT).show();
         } else {
             ClipboardManager clipboardObservaciones = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-            ClipData clipObservaciones = ClipData.newPlainText("obs",  "'" + observaciones.getText().toString() + "'" );
+            ClipData clipObservaciones = ClipData.newPlainText("obs",  "_" + observaciones.getText().toString().trim() + "_" );
             clipboardObservaciones.setPrimaryClip(clipObservaciones);
             Toast.makeText(MainActivity.this, "Texto copiado!", Toast.LENGTH_SHORT).show();
         }
@@ -316,19 +316,19 @@ public class MainActivity extends AppCompatActivity{
         ClipData clipData = ClipData.newPlainText("abc",
                 "❌️ *VALIDAÇÃO DE QUEBRA* ❌️\n" +
                 "*" + otro + "*" +
-                "\nContrato: *884/" + contrato.getText().toString() + "*" +
+                "\nContrato: *884/" + contrato.getText().toString().trim() + "*" +
                 "\nCódigo: *" + codigo + "*" +
                 "\nMotivo: *" + motivo + "*" +
-                "\nJanela: *" + janela.getText().toString() + "*" +
-                "\nServiço: *" + servicio.getText().toString() + "*" +
-                "\nTécnico: *" + tecnico.getText().toString() + "*" +
-                "\nParceira: *" + parceira.getText().toString() + "*" +
+                "\nJanela: *" + janela.getText().toString().trim() + "*" +
+                "\nServiço: *" + servicio.getText().toString().trim() + "*" +
+                "\nTécnico: *" + tecnico.getText().toString().trim() + "*" +
+                "\nParceira: *" + parceira.getText().toString().trim() + "*" +
                 "\nCasa: *" + isCasa + "*" +
                 "\nComercio: *" + isComercio + "*" +
                 "\nApartamento: *" + isApartamento + "*" +
                 "\nTem Porteiro: *" + isPortero + "*" +
-                "\nPorteiro: *" + portero.getText().toString() + "*" +
-                "\nObservações: *" + observaciones.getText().toString()+ "*");
+                "\nPorteiro: *" + portero.getText().toString().trim() + "*" +
+                "\nObservações: *" + observaciones.getText().toString().trim() + "*");
         clipboardManager.setPrimaryClip(clipData);
         Toast.makeText(MainActivity.this, "copiado...", Toast.LENGTH_SHORT).show();
     }
